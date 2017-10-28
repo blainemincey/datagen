@@ -3,6 +3,9 @@ package com.mongodb;
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Arrays;
 import java.util.GregorianCalendar;
 
 /**
@@ -78,6 +81,27 @@ public class RandomDataGenerator {
 
     /**
      *
+     * @return
+     */
+    public static int getRandomInt() {
+        return (int)(Math.random() * 100 + 1);
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static BigDecimal getRandomBigDecimal() {
+
+        BigDecimal bd = new BigDecimal(Double.toString(Math.random() * 100));
+        bd = bd.setScale(10, RoundingMode.HALF_UP);
+
+        return bd;
+
+    }
+
+    /**
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -88,17 +112,17 @@ public class RandomDataGenerator {
         System.out.println("The year " + year + " is between 1880 and 2018");
 
         Integer[] randomIntArray = RandomDataGenerator.getRandomIntArray(10);
-        for(int i = 0; i < randomIntArray.length; i++) {
-            System.out.println("element " + i + " is " + randomIntArray[i]);
-        }
+        System.out.println(Arrays.toString(randomIntArray));
 
         System.out.println("Get Words: " + RandomDataGenerator.getWords(5));
 
         String[] stringArray = RandomDataGenerator.getStringArray(5);
-        for(int j = 0; j < stringArray.length; j++) {
-            System.out.println("Element: " + j + " is " + stringArray[j]);
-        }
+        System.out.println(Arrays.toString(stringArray));
 
+
+        System.out.println("Random int: " + RandomDataGenerator.getRandomInt());
+
+        System.out.println("Random Big Decimal: " + RandomDataGenerator.getRandomBigDecimal());
 
         System.out.println("End: " + new java.util.Date());
     }

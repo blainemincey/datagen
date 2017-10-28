@@ -134,7 +134,10 @@ public class DataGen {
                                         .append("model", myTestDocument.getModel())
                                         .append("year", myTestDocument.getYear())
                                         .append("dcid", basicDBList)
-                                        .append("comments", basicDBList2)));
+                                        .append("comments", basicDBList2)
+                                        .append("createDate", myTestDocument.getCreateDate())
+                                        .append("myDecimal128", myTestDocument.getMyDecimal128())));
+
 
             }
 

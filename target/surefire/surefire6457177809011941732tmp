@@ -1,0 +1,10 @@
+#surefire
+#Mon Oct 02 17:45:50 EDT 2017
+isDropCollection=true
+user.dir=/Users/bmincey/IdeaProjects/datagen
+idea.version=2017.2.5
+mongoClientURI=mongodb\://localhost\:27017
+localRepository=/Users/bmincey/.m2/repository
+database=loadData
+collection=myCollection
+basedir=/Users/bmincey/IdeaProjects/datagen

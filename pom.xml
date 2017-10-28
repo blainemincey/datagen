@@ -75,7 +75,7 @@
             </property>
             <property>
               <name>isDropCollection</name>
-              <value>false</value>
+              <value>true</value>
             </property>
           </systemProperties>
         </configuration>

@@ -1,7 +1,10 @@
 package com.mongodb;
 
 
+import org.bson.types.Decimal128;
+
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * Created by bmincey on 6/30/17.
@@ -18,6 +21,8 @@ public class MyTestDocument {
     private int year;
     private Integer[] DCID;
     private String[] comments;
+    private java.util.Date createDate;
+    private org.bson.types.Decimal128 myDecimal128;
 
 
     /**
@@ -34,10 +39,35 @@ public class MyTestDocument {
         this.setYear(RandomDataGenerator.getRandomYear(1880, 2018));
         this.setDCID(RandomDataGenerator.getRandomIntArray(10));
         this.setComments(RandomDataGenerator.getStringArray(10));
+        this.setCreateDate(new java.util.Date());
+        this.setMyDecimal128(new org.bson.types.Decimal128(RandomDataGenerator.getRandomBigDecimal()));
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        System.out.println(new MyTestDocument());
     }
 
     /**
      *
+     * @return
+     */
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    /**
+     *
+     * @param createDate
+     */
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    /**
      * @return
      */
     public String getApplID() {
@@ -45,7 +75,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param applID
      */
     public void setApplID(String applID) {
@@ -53,7 +82,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public String getHqSKU() {
@@ -61,7 +89,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param hqSKU
      */
     public void setHqSKU(String hqSKU) {
@@ -69,7 +96,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public String getFieldSKU() {
@@ -77,7 +103,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param fieldSKU
      */
     public void setFieldSKU(String fieldSKU) {
@@ -85,7 +110,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public String getLongDescription() {
@@ -93,7 +117,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param longDescription
      */
     public void setLongDescription(String longDescription) {
@@ -101,7 +124,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public String getMake() {
@@ -109,7 +131,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param make
      */
     public void setMake(String make) {
@@ -117,7 +138,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public String getModel() {
@@ -125,7 +145,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param model
      */
     public void setModel(String model) {
@@ -133,7 +152,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public int getYear() {
@@ -141,7 +159,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param year
      */
     public void setYear(int year) {
@@ -149,7 +166,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public Integer[] getDCID() {
@@ -157,7 +173,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param DCID
      */
     public void setDCID(Integer[] DCID) {
@@ -165,7 +180,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @return
      */
     public String[] getComments() {
@@ -173,7 +187,6 @@ public class MyTestDocument {
     }
 
     /**
-     *
      * @param comments
      */
     public void setComments(String[] comments) {
@@ -184,6 +197,18 @@ public class MyTestDocument {
      *
      * @return
      */
+    public Decimal128 getMyDecimal128() {
+        return myDecimal128;
+    }
+
+    /**
+     *
+     * @param myDecimal128
+     */
+    public void setMyDecimal128(Decimal128 myDecimal128) {
+        this.myDecimal128 = myDecimal128;
+    }
+
     @Override
     public String toString() {
         return "MyTestDocument{" +
@@ -196,14 +221,8 @@ public class MyTestDocument {
                 ", year=" + year +
                 ", DCID=" + Arrays.toString(DCID) +
                 ", comments=" + Arrays.toString(comments) +
+                ", createDate=" + createDate +
+                ", myDecimal128=" + myDecimal128 +
                 '}';
-    }
-
-    /**
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        System.out.println(new MyTestDocument());
     }
 }
